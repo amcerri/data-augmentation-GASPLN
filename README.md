@@ -1,27 +1,14 @@
-# Biblioteca Python para Data Augmentation em Português (Brasil)
+# Data Augmentation Library for Portuguese (Brazil)
 
-Projeto realizado em conjunto com o grupo de pesquisa [GASPLN](https://wp.ufpel.edu.br/gaspln/) da Universidade Federal de Pelotas (UFPel) para criar uma biblioteca Python para Data Augmentation em Português (Brasil).
+Research project developed in conjunction with the [GASPLN](https://wp.ufpel.edu.br/gaspln/) research group of the Federal University of Pelotas (UFPel) to create a Python library for Data Augmentation in Portuguese (Brazil).
 
 ## Instalação
 
 ```bash
-em construção
+pip install data_augmentation_GASPLN
 ```
-## Técnicas de Data Augmentation implementadas
+## How to use
 
-- [x] Substituição de sinônimos
-- [ ] <s>Word Embeddings</s>
-- [ ] <s>Random Insertion</s>
-- [ ] <s>Random Swap</s>
-- [ ] <s>Random Deletion</s>
-- [ ] <s>Back Translation</s>
+### Synonym Replacement
 
-### Substituição de sinônimos
-
-Como o próprio nome implica, a técnica de substituição de sinônimos consiste em substituir uma palavra por um sinônimo.
-
-Para a criação da lista de sinônimos utilizada no projeto, foi realizado web scraping no [Vocabulário Ortográfico da Língua Portuguesa](https://voc.cplp.org/index.php?action=vonbr) para gerar uma lista de palavras, a qual foi combinada com a [Lista de todas as palavras do português brasileiro](https://www.ime.usp.br/~pf/dicios/) disponibilizada pelo [IME-USP](https://www.ime.usp.br/). A partir da lista de palavras obtidas, foi utilizada a [Dicio API](https://github.com/felipemfp/dicio) criada pelo [Felipe Pontes](https://github.com/felipemfp) para obtenção dos sinônimos, gerando um arquivo parquet com as palavras e seus respectivos sinônimos.
-
-#### Exemplo de uso
-
-... (em construção)
+- Under construction
