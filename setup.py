@@ -17,7 +17,7 @@ setuptools.setup(
     project_urls = {                                
         'Bug Tracker': 'https://github.com/amcerri/data-augmentation-GASPLN/issues'
     },
-    install_requires=['nltk, pandas, pyarrow, numpy, translators'],                        
+    install_requires=['nltk', 'pandas', 'pyarrow', 'numpy', 'translators'],                        
     keywords=["pypi", "data_augmentation", "nlp"],
     classifiers=[ # https://pypi.org/classifiers
         'Development Status :: 1 - Planning',
