@@ -5,8 +5,8 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name='data_augmentation_GASPLN',
-    packages=['data_augmentation_GASPLn'],
-    version='0.0.1',
+    packages=['data_augmentation_GASPLN'],
+    version='0.0.6',
     license='GPL-3.0',
     description='Testing installation of Package',
     long_description=long_description,
@@ -18,7 +18,7 @@ setuptools.setup(
         'Bug Tracker': 'https://github.com/amcerri/data-augmentation-GASPLN/issues'
     },
     install_requires=['nltk', 'pandas', 'pyarrow', 'numpy', 'translators'],                        
-    keywords=["pypi", "data_augmentation", "nlp"],
+    keywords=["pypi", "data_augmentation_GASPLN/data_augmentation", "nlp"],
     classifiers=[ # https://pypi.org/classifiers
         'Development Status :: 1 - Planning',
         'Intended Audience :: Developers',
@@ -27,7 +27,6 @@ setuptools.setup(
         'Programming Language :: Python :: 3',
     ],
     include_package_data=True,
-    package_data={'': ['data/*.parquet']},
     
-    download_url="https://github.com/amcerri/data-augmentation-GASPLN/archive/refs/tags/0.0.1.tar.gz",
+    download_url="https://github.com/amcerri/data-augmentation-GASPLN/archive/refs/tags/0.0.6.tar.gz",
 )

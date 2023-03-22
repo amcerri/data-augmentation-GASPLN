@@ -1,5 +1,0 @@
-nltk
-pandas
-pyarrow
-numpy
-translators
