@@ -9,6 +9,7 @@ The package is available on PyPI and can be installed with pip:
 ```bash
 pip install data_augmentation_GASPLN
 ```
+
 ## How to use
 
 ***THIS PROJECT IS STILL UNDER CONSTRUCTION AND NOT READY FOR USE***
@@ -20,6 +21,7 @@ You can import the library as follows:
 ```python
 import data_augmentation_GASPLN.functions as da
 ```
+
 ### Synonym Replacement
 
 ```python
@@ -35,5 +37,6 @@ da.back_translation("Data augmentation é uma técnica de aprendizado de máquin
 ```
 
 Where the first parameter is the text to be augmented, and the second parameter is the number of translations to be made. As for now, there are two options available for the second parameter, 1 or 2, where:
+
 - 1 = Portuguese > English > Portuguese
 - 2 = Portuguese > Spanish > English > Portuguese
