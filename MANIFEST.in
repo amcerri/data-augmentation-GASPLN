@@ -1,1 +1,1 @@
-include data_augmentation_GASPLN/data/synonyms_pt_BR.parquet
+recursive-include data *

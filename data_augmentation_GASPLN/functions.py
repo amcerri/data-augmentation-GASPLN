@@ -30,10 +30,12 @@ try:
 except LookupError:
     nltk.download('averaged_perceptron_tagger')
     
-# load the synonyms dataframe
-synonyms = pd.read_parquet('data_augmentation_GASPLN/data/synonyms_pt_BR.parquet', engine='pyarrow')
+# load the synonyms_pt_BR.parquet file to a dataframe
+synonyms_df = pd.read_parquet('data/synonyms_pt_BR.parquet')
 
-def synonyms_replacement(text, df, percentage=0.5):
+print(synonyms_df.head())
+
+def synonyms_replacement(text, percentage=0.5):
     tokens = nltk.word_tokenize(text)
     stop_words = nltk.corpus.stopwords.words('portuguese')
     
@@ -43,13 +45,13 @@ def synonyms_replacement(text, df, percentage=0.5):
     for index in indexes:
         word = tokens[index]
         
-        if word not in df['word'].values:
+        if word not in synonyms_df['word'].values:
             continue
         
         if word in stop_words:
             continue
         
-        synonyms = list(df[df['word'] == word]['synonyms'].values[0])
+        synonyms = list(synonyms_df[synonyms_df['word'] == word]['synonyms'].values[0])
         
         if len(synonyms) == 0:
             continue
