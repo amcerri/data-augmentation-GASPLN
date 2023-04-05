@@ -25,7 +25,7 @@ import data_augmentation_GASPLN.functions as da
 ### Synonym Replacement
 
 ```python
-da.synonyms_replacement("Data augmentation é uma técnica de aprendizado de máquina que aumenta o número de dados de treinamento, alterando os dados existentes de alguma forma a fim de criar novos dados.", 0.5)
+da.functions.synonyms_replacement("Data augmentation é uma técnica de aprendizado de máquina que aumenta o número de dados de treinamento, alterando os dados existentes de alguma forma a fim de criar novos dados.", 0.5)
 ```
 
 Where the first parameter is the text to be augmented, and the second parameter is the amount of words to be replaced by synonyms (0.5 = 50% of the words in the text), if they are found in the synonym dictionary.
@@ -33,7 +33,7 @@ Where the first parameter is the text to be augmented, and the second parameter 
 ### Back Translation
 
 ```python
-da.back_translation("Data augmentation é uma técnica de aprendizado de máquina que aumenta o número de dados de treinamento, alterando os dados existentes de alguma forma a fim de criar novos dados.", 2)
+da.functions.back_translation("Data augmentation é uma técnica de aprendizado de máquina que aumenta o número de dados de treinamento, alterando os dados existentes de alguma forma a fim de criar novos dados.", 2)
 ```
 
 Where the first parameter is the text to be augmented, and the second parameter is the number of translations to be made. As for now, there are two options available for the second parameter, 1 or 2, where:

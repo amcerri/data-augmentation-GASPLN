@@ -5,6 +5,7 @@ import pyarrow.parquet as pq
 import numpy as np
 import translators as ts
 import translators.server as tss
+import pkg_resources
 
 # check if punkt is installed, if not, install it
 try:
@@ -30,10 +31,8 @@ try:
 except LookupError:
     nltk.download('averaged_perceptron_tagger')
     
-# load the synonyms_pt_BR.parquet file to a dataframe
-synonyms_df = pd.read_parquet('data/synonyms_pt_BR.parquet')
-
-print(synonyms_df.head())
+# load the synonyms_pt_BR.parquet file to a dataframe using pkg_resources to avoid hardcoding the path
+synonyms_df = pd.read_parquet(pkg_resources.resource_filename('data_augmentation_GASPLN', 'data/synonyms_pt_BR.parquet'))
 
 def synonyms_replacement(text, percentage=0.5):
     tokens = nltk.word_tokenize(text)
