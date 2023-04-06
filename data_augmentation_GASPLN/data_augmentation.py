@@ -1,3 +1,4 @@
+import spacy
 import nltk
 import pandas as pd
 import pyarrow as pa
@@ -36,7 +37,6 @@ synonyms_df = pd.read_parquet(pkg_resources.resource_filename('data_augmentation
 
 def synonyms_replacement(text, percentage=0.5):
     tokens = nltk.word_tokenize(text)
-    stop_words = nltk.corpus.stopwords.words('portuguese')
     
     number_of_words = int(len(tokens) * percentage)
     indexes = np.random.choice(len(tokens), number_of_words, replace=False)
@@ -44,10 +44,21 @@ def synonyms_replacement(text, percentage=0.5):
     for index in indexes:
         word = tokens[index]
         
-        if word not in synonyms_df['word'].values:
+        if len(word) == 1:
             continue
         
-        if word in stop_words:
+        syn_category = None
+        for syn in synonyms_df.itertuples():
+            if syn.word == word:
+                syn_category = nlp(syn.synonyms[0])[0].pos_
+                break
+        
+        if syn_category is None:
+            continue
+        
+        word_category = nlp(word)[0].pos_
+        
+        if word_category != syn_category:
             continue
         
         synonyms = list(synonyms_df[synonyms_df['word'] == word]['synonyms'].values[0])
