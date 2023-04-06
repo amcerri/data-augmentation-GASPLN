@@ -37,6 +37,7 @@ synonyms_df = pd.read_parquet(pkg_resources.resource_filename('data_augmentation
 
 def synonyms_replacement(text, percentage=0.5):
     tokens = nltk.word_tokenize(text)
+    nlp = spacy.load('pt_core_news_sm')
     
     number_of_words = int(len(tokens) * percentage)
     indexes = np.random.choice(len(tokens), number_of_words, replace=False)

@@ -10,6 +10,12 @@ The package is available on PyPI and can be easily installed using pip:
 pip install data_augmentation_GASPLN
 ```
 
+You also need to download the Portuguese model for spaCy. To do this, run the following command:
+
+```bash
+python -m spacy download pt_core_news_sm
+```
+
 ## Usage
 
 ***PLEASE NOTE THAT THIS PROJECT IS STILL UNDER CONSTRUCTION AND NOT YET READY FOR USE***
