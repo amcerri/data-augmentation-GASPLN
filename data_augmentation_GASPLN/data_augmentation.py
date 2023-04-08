@@ -72,9 +72,22 @@ def synonyms_replacement(text, percentage=0.5):
         
     return ' '.join(tokens)
 
-def back_translation(sentence, num_of_translations=2):
-    first_translation = ts.translate_text(sentence, translator='google', to_language='es')
-    second_translation = ts.translate_text(first_translation, translator='google', to_language='en')
-    back_translation = ts.translate_text(second_translation, translator='google', to_language='pt')
+def back_translation(sentence, languages=['en', 'es', 'pt'], translator='google'):
+        
+    # Check if the sentence is a string
+    if not isinstance(sentence, str):
+        raise ValueError('Sentence must be a string')
     
-    return back_translation
+    # Check if the sentence is not empty
+    if sentence == '':
+        raise ValueError('Sentence must not be empty')
+    
+    # For the number of languages, translate the sentence to the next language using the specified translator (if the last language is not pt, add it as the last language)
+    for i in range(len(languages) - 1):
+        sentence = ts.translate_text(query_text=sentence, to_language=languages[i + 1], translator=translator)
+        
+    # If the last language is not pt, translate the sentence to pt
+    if languages[-1] != 'pt':
+        sentence = ts.translate_text(query_text=sentence, to_language='pt', translator=translator)
+
+    return sentence

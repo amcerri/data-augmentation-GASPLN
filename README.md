@@ -43,10 +43,12 @@ The first parameter is the text to be augmented, and the second parameter is the
 The `back_translation()` function can be used for back translation. Here's an example:
 
 ```python
-da.back_translation("Data augmentation é uma técnica de aprendizado de máquina que aumenta o número de dados de treinamento, alterando os dados existentes de alguma forma a fim de criar novos dados.", 2)
+da.back_translation('Data augmentation é uma técnica de aprendizado de máquina que aumenta o número de dados de treinamento, alterando os dados existentes em conjuntos de dados de treinamento.', languages=['en', 'es', 'ru'], translator='google')
 ```
 
-The first parameter is the text to be augmented, and the second parameter is the number of translations to be performed. Currently, two options are available for the second parameter, 1 or 2, where:
+- The `first parameter` is the text to be augmented;
+- The `second parameter` is a list of languages to be used for back translation (by default it translates to English, Spanish and back to Portuguese*)
+    * It is not necessary to include Portuguese in the list of languages, as the text will be translated to Portuguese at the end of the process;
+- The `third parameter` is the translator to be used (by default it uses Google Translate).
 
-- 1 = Portuguese > English > Portuguese
-- 2 = Portuguese > Spanish > English > Portuguese
+A list of the available languages and translators can be found [here](https://pypi.org/project/translators/#supported-languages).
