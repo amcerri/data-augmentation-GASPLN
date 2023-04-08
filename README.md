@@ -2,6 +2,13 @@
 
 This is a research project developed in collaboration with the [GASPLN](https://wp.ufpel.edu.br/gaspln/) research group of the Federal University of Pelotas (UFPel) aimed at creating a Python library for Data Augmentation in Portuguese (Brazil).
 
+## Table of Contents
+- [Installation](#installation)  
+- [Usage](#usage)
+    - [Synonym Replacement](#synonym-replacement)
+    - [Back Translation](#back-translation)  
+
+
 ## Installation
 
 The package is available on PyPI and can be easily installed using pip:
