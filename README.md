@@ -6,7 +6,11 @@ This is a research project developed in collaboration with the [GASPLN](https://
 - [Installation](#installation)  
 - [Usage](#usage)
     - [Synonym Replacement](#synonym-replacement)
-    - [Back Translation](#back-translation)  
+    - [Back Translation](#back-translation)
+    - [Character Swap](#character-swap)
+    - [Random Swap](#random-swap)
+    - [Random Deletion](#random-deletion)
+    - [Add Noise](#add-noise)
 
 
 ## Installation
@@ -59,3 +63,52 @@ da.back_translation('Data augmentation é uma técnica de aprendizado de máquin
 - The `third parameter` is the translator to be used (by default it uses Google Translate).
 
 A list of the available languages and translators can be found [here](https://pypi.org/project/translators/#supported-languages).
+
+### Character Swap
+
+The `character_swap()` function performs  random character swaps in the text. Here's an example:
+
+```python
+da.character_swap("Data augmentation é uma técnica de aprendizado de máquina que aumenta o número de dados de treinamento, alterando os dados existentes de alguma forma a fim de criar novos dados.", 0.25)
+```
+
+- The `first parameter` is the text to be augmented;
+- The `second parameter` is probability of two adjacent characters being swapped (by default, and in this example, 25%).
+
+### Random Swap
+
+The `random_swap()` performs a random number or percentage of swaps of adjacent words in the input text.
+
+```python
+
+da.random_swap("Data augmentation é uma técnica de aprendizado de máquina que aumenta o número de dados de treinamento, alterando os dados existentes de alguma forma a fim de criar novos dados.", num_swaps=2)
+```
+
+- The `first parameter` is the text to be augmented;
+- The `second parameter` must be one of the following:
+    - `num_swaps`: the number of swaps to be performed
+    - `percent_swaps`: the percentage of words to be swapped.
+    **NOTE**: Both parameters are mutually exclusive and are set to `None` by default.
+
+### Random Deletion
+
+The `random_deletion()` function performs random deletion of words in the input sentence with probability p.
+
+```python
+da.random_deletion("Data augmentation é uma técnica de aprendizado de máquina que aumenta o número de dados de treinamento, alterando os dados existentes de alguma forma a fim de criar novos dados.", p=0.1)
+```
+
+- The `first parameter` is the text to be augmented;
+- The `second parameter` is the probability of a word being deleted (by default, and in this example, 10%).
+
+### Add Noise
+
+The `add_noise()` function adds noise to the input text by randomly inserting or deleting characters of the input text.
+
+```python
+da.add_noise("Data augmentation é uma técnica de aprendizado de máquina que aumenta o número de dados de treinamento, alterando os dados existentes de alguma forma a fim de criar novos dados.", word_p=0.25, char_p=0.1):
+```
+
+- The `first parameter` is the text to be augmented;
+- The `second parameter` is the probability of a word to noise being added (by default, and in this example, 25%);
+- The `third parameter` is the probability of noise being applied to a word selected for noise addition (by default, and in this example, 10%).
