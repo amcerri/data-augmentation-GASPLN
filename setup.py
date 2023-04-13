@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='data_augmentation_GASPLN',
-    version='0.1.6',
+    version='0.1.7',
     author='Artur Melchiori Cerri',
     author_email='arturmelchiori@gmail.com',
     description='Data augmentation for Portuguese language',
