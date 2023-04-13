@@ -14,6 +14,7 @@ Este é um projeto de pesquisa desenvolvido em colaboração com o grupo de pesq
     - [Troca Aleatória](#troca-aleatória-de-palavras---random_swap)
     - [Adição de Ruído](#adição-de-ruído---add_noise)
     - [Augmentação de Texto](#augmentação-de-texto---text_augmentation)
+- [Dataset de Sinônimos](#dataset-de-sinônimos)
 
 # Instalação
 
@@ -34,6 +35,8 @@ python -m spacy download pt_core_news_sm
 ## Substituição de Sinônimos - **synonyms_replacement()**
 
 Esta função é usada para substituir uma porcentagem de palavras em uma determinada string de texto pelos seus sinônimos. Ela recebe dois parâmetros: text e percentage.
+
+***Para informações a respeito do dicionário de sinônimos utilizado na função, navegue até [Dicionário de Sinônimos](#dicionário-de-sinônimos).***
 
 ### Parâmetros
 
@@ -220,3 +223,12 @@ augmented_text = text_augmentation(text,
 # Print the result
 print(augmented_text)
 ```
+
+## Dataset de Sinônimos
+
+Para a geração do dataset de sinônimos utilizado neste projeto, inicialmente foi feita uma coleta de palavras do vocabulário da língua portuguesa a partir do web scraping do [Vocabulário Ortográfico Comum da Língua Portuguesa](https://voc.cplp.org/index.php?action=simplesearch&query=a&sel=start) e da concatenação com a [lista de palavras do português brasileiro](https://www.ime.usp.br/~pf/dicios/br-utf8.txt) disponibilizada pelo [Instituto de Matemática e Estatística da Universidade de São Paulo (IME-USP)](https://www.ime.usp.br/). O resultado foi uma lista com 458437 palavras.
+
+Em seguida, foi utilizada a [Dicio API](https://github.com/ThiagoNelsi/dicio-api), disponibilizada por [Thiago Nelsi do Couto](https://github.com/ThiagoNelsi) para gerar um dataset com as palavras e seus respectivos sinônimos. Com isso, o projeto oferece uma base de dados rica em palavras e sinônimos que pode ser utilizada em diversas aplicações.
+
+A lista de palavras do vocabulário da língua portuguesa e o dicionário de sinônimos podem ser encontrados na pasta [data](data_augmentation_GASPLN/data) deste repositório.
+Os notebooks utilizados para a coleta e geração do dicionário de sinônimos podem ser encontrados na pasta [web_scraping](web_scraping) deste repositório.
