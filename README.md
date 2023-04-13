@@ -224,7 +224,7 @@ print(augmented_text)
 
 ## Synonyms Dataset
 
-For the generation of the synonyms dataset used in this project, a collection of words from the Portuguese language vocabulary was initially made through web scraping from the [Common Orthographic Vocabulary of the Portuguese Language]((https://voc.cplp.org/index.php?action=simplesearch&query=a&sel=start)) and concatenated with the [list of Brazilian Portuguese words](https://www.ime.usp.br/~pf/dicios/br-utf8.txt) provided by the [Institute of Mathematics and Statistics of the University of São Paulo (IME-USP)](https://www.ime.usp.br/). The result was a list of 458,437 words.
+To generate the synonyms dataset used in this project, a collection of words from the Portuguese language vocabulary was initially made through web scraping from the [Common Orthographic Vocabulary of the Portuguese Language]((https://voc.cplp.org/index.php?action=simplesearch&query=a&sel=start)) and concatenated with the [list of Brazilian Portuguese words](https://www.ime.usp.br/~pf/dicios/br-utf8.txt) provided by the [Institute of Mathematics and Statistics of the University of São Paulo (IME-USP)](https://www.ime.usp.br/). The result was a list of 458,437 words.
 
 Next, the [Dicio API](https://github.com/ThiagoNelsi/dicio-api), provided [Thiago Nelsi do Couto](https://github.com/ThiagoNelsi), was used to generate a dataset with the words and their respective synonyms. With this, the project offers a database rich in words and synonyms that can be used in various applications.
 
