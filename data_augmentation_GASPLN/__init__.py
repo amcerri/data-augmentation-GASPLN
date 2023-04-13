@@ -21,13 +21,12 @@ nltk.download('punkt', 'corpora/stopwords', 'corpora/wordnet', 'taggers/averaged
 synonyms_table = pq.read_table(pkg_resources.resource_filename('data_augmentation_GASPLN', 'data/synonyms_pt_BR.parquet'))
 synonyms_df = synonyms_table.to_pandas()
 
-def synonyms_replacement(text: str, synonyms_df: pd.DataFrame, percentage: float = 0.25) -> str:
+def synonyms_replacement(text: str, percentage: float = 0.25) -> str:
     """
     Replace a percentage of the words in the text with synonyms.
     
     Args:
     - text (str): The input text to be processed.
-    - synonyms_df (pd.DataFrame): A DataFrame containing word synonyms.
     - percentage (float): The percentage of words to be replaced with synonyms (default is 0.25).
     
     Returns:

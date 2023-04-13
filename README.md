@@ -53,7 +53,7 @@ text = "Texto a ser augmentado aqui."
 augmented_text = synonyms_replacement(text, percentage=0.25)
 
 # Print the result
-print(result)
+print(augmented_text)
 ```
 
 ## Back Translation Function
@@ -104,7 +104,7 @@ text = "Texto a ser augmentado aqui aqui."
 augmented_text = character_swap(text, prob=0.4)
 
 # Print the result
-print(result)
+print(augmented_text)
 ```
 
 ## Random Swap Function
@@ -160,7 +160,7 @@ text = "Texto a ser augmentado aqui."
 augmented_text = add_noise(text, word_noise_prob=0.2, char_noise_prob=0.2)
 
 # Print the result
-print(result)
+print(augmented_text)
 ```
 ## Text Augmentation Function
 
@@ -217,5 +217,5 @@ augmented_text = text_augmentation(text,
                                     use_add_noise=True, word_noise_prob=0.3, char_noise_prob=0.3)
 
 # Print the result
-print(result)
+print(augmented_text)
 ```
