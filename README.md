@@ -37,8 +37,6 @@ This function is used to replace a percentage of words in a given text string wi
 
 * `text` (str): The input text to be processed. This can be any string, but should ideally be a full sentence or paragraph for best results.
 
-* `synonyms_df` (pd.DataFrame): A Pandas DataFrame containing word synonyms. This is already pre-loaded in the initialization, so there is no need to manually specify this parameter.
-
 * `percentage` (float, optional): The percentage of words in the input `text` that should be replaced with their synonyms. The default value is 0.25, which means that 25% of the words in the input text will be replaced.
 
 ### Example Usage:
@@ -171,8 +169,6 @@ This function applies multiple text augmentation techniques to the input text. I
 * `text` (str): The input text to be processed.
 
 * `use_synonyms` (bool, optional): Whether or not to use synonym replacement. Default is `True`.
-
-* `synonyms_df` (pd.DataFrame, optional): A Pandas DataFrame containing word synonyms. This is already pre-loaded in the initialization, so there is no need to manually specify this parameter. Default is `synonyms_df`.
 
 * `synonyms_percentage` (float, optional): The percentage of words in the input text that should be replaced with their synonyms. Default is 0.5.
 

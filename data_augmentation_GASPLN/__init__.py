@@ -200,7 +200,7 @@ def add_noise(text: str, word_noise_prob: float = 0.2, char_noise_prob: float = 
     return " ".join(words)
 
 def text_augmentation(text: str, 
-                      use_synonyms: bool = True, synonyms_df = synonyms_df, synonyms_percentage: float = 0.5,
+                      use_synonyms: bool = True, synonyms_percentage: float = 0.5,
                       use_back_translation: bool = False, languages: List[str] = ['en', 'es'], translator: str = 'google',
                       use_character_swap: bool = False, char_swap_prob: float = 0.25,
                       use_random_swap: bool = False, random_swap_percentage: float = None, num_words: int = None, random_swap_prob: float = 0.15,
