@@ -1,6 +1,6 @@
 # Data Augmentation Library for Portuguese (Brazil)
 
-**Para uma versão deste README em Português, click [here](README_pt_BR.md).**
+**Para uma versão deste README em Português, clique [aqui](README_pt_BR.md).**
 
 This is a research project developed in collaboration with the [GASPLN](https://wp.ufpel.edu.br/gaspln/) research group of the Federal University of Pelotas (UFPel) aimed at creating a Python library for Data Augmentation in Portuguese (Brazil).
 
