@@ -1,8 +1,11 @@
 # Data Augmentation Library for Portuguese (Brazil)
 
+**Para uma versão deste README em Português, click [here](README_pt_BR.md).**
+
 This is a research project developed in collaboration with the [GASPLN](https://wp.ufpel.edu.br/gaspln/) research group of the Federal University of Pelotas (UFPel) aimed at creating a Python library for Data Augmentation in Portuguese (Brazil).
 
 ## Table of Contents
+
 - [Installation](#installation)  
 - [Usage](#usage)
     - [Synonym Replacement](#synonyms-replacement-function)
@@ -31,13 +34,13 @@ python -m spacy download pt_core_news_sm
 
 ## Synonyms Replacement Function
 
-This function is used to replace a percentage of words in a given text string with their synonyms. It takes three arguments: `text`, `synonyms_df`, and `percentage`.
+This function is used to replace a percentage of words in a given text string with their synonyms. It takes two arguments: `text` and `percentage`.
 
-### Arguments:
+### Arguments
 
-* `text` (str): The input text to be processed. This can be any string, but should ideally be a full sentence or paragraph for best results.
+- `text` (str): The input text to be processed. This can be any string, but should ideally be a full sentence or paragraph for best results.
 
-* `percentage` (float, optional): The percentage of words in the input `text` that should be replaced with their synonyms. The default value is 0.25, which means that 25% of the words in the input text will be replaced.
+- `percentage` (float, optional): The percentage of words in the input `text` that should be replaced with their synonyms. The default value is 0.25, which means that 25% of the words in the input text will be replaced.
 
 ### Example Usage:
 
@@ -56,13 +59,15 @@ print(augmented_text)
 
 ## Back Translation Function
 
-This function performs back translation of the given text, iterating over the provided languages in the list. 
+This function performs back translation of the given text, iterating over the provided languages in the list.
 
-### Arguments:
+### Arguments
 
-* `text` (str): The input text to be translated. 
-* `languages` (List[str]): The list of languages to be used for back translation, excluding the original language. The last language in the list must be Portuguese, unless it is the only language in the list (it will be automatically added if not provided).
-* `translator` (str): The name of the translator to be used for back translation. Must be one available at https://pypi.org/project/translators/#supported-translation-services
+- `text` (str): The input text to be translated.
+
+- `languages` (List[str]): The list of languages to be used for back translation, excluding the original language.
+
+- `translator` (str): The name of the translator to be used for back translation. Must be one available at https://pypi.org/project/translators/#supported-translation-services
 
 ### Example Usage:
 
@@ -84,11 +89,11 @@ print(augmented_text)
 
 This function is used to swap characters in words of the input text with a given probability, except for words with less than or equal to 3 letters or for punctuation marks, keeping their positions in the word. It takes two arguments: `text` and `prob`.
 
-### Arguments:
+### Arguments
 
-* `text` (str): The input text to swap characters in. This can be any string, but should ideally be a full sentence or paragraph for best results.
+- `text` (str): The input text to swap characters in. This can be any string, but should ideally be a full sentence or paragraph for best results.
 
-* `prob` (float, optional): The probability of swapping characters in each eligible word. The default value is 0.25, which means that there is a 25% chance of swapping characters in each eligible word.
+- `prob` (float, optional): The probability of swapping characters in each eligible word. The default value is 0.25, which means that there is a 25% chance of swapping characters in each eligible word.
 
 ### Example Usage:
 
@@ -109,17 +114,17 @@ print(augmented_text)
 
 This function randomly swaps words in a text. You can specify either the percentage of words to swap, or the number of words to swap, or the probability of swapping each word (with a default of 20%).
 
-### Arguments:
+### Arguments
 
-* `text` (str): The input text to swap words in. This can be any string.
+- `text` (str): The input text to swap words in. This can be any string.
 
-* `percentage` (float, optional): The percentage of words to swap in the input text. The default value is None.
+- `percentage` (float, optional): The percentage of words to swap in the input text. The default value is None.
 
-* `num_words` (int, optional): The number of words to swap in the input text. The default value is None.
+- `num_words` (int, optional): The number of words to swap in the input text. The default value is None.
 
-* `prob` (float, optional): The probability of swapping each word in the input text. The default value is 0.15.
+- `prob` (float, optional): The probability of swapping each word in the input text. The default value is 0.15.
 
-### Example Usage:
+### Example Usage
 
 Here's an example of how to use the `random_swap` function:
 
@@ -138,15 +143,15 @@ print(augmented_text)
 
 This function is used to add noise to a percentage of the words in a given text string by inserting or removing letters, and swapping punctuations with a small probability. It takes three arguments: `text`, `word_noise_prob`, and `char_noise_prob`.
 
-### Arguments:
+### Arguments
 
-* `text` (str): The input text to be processed. This can be any string, but should ideally be a full sentence or paragraph for best results.
+- `text` (str): The input text to be processed. This can be any string, but should ideally be a full sentence or paragraph for best results.
 
-* `word_noise_prob` (float, optional): The probability of adding noise to a given word. The default value is 0.2, which means that 20% of the words in the input text will have noise added to them.
+- `word_noise_prob` (float, optional): The probability of adding noise to a given word. The default value is 0.2, which means that 20% of the words in the input text will have noise added to them.
 
-* `char_noise_prob` (float, optional): The probability of adding or removing a letter from a given word. The default value is 0.2, which means that there is a 20% chance that a letter will be added or removed from a word.
+- `char_noise_prob` (float, optional): The probability of adding or removing a letter from a given word. The default value is 0.2, which means that there is a 20% chance that a letter will be added or removed from a word.
 
-### Example Usage:
+### Example Usage
 
 Here's an example of how to use the `add_noise` function:
 
@@ -164,39 +169,39 @@ print(augmented_text)
 
 This function applies multiple text augmentation techniques to the input text. It takes several arguments that determine which techniques are used and with what parameters.
 
-### Arguments:
+### Arguments
 
-* `text` (str): The input text to be processed.
+- `text` (str): The input text to be processed.
 
-* `use_synonyms` (bool, optional): Whether or not to use synonym replacement. Default is `True`.
+- `use_synonyms` (bool, optional): Whether or not to use synonym replacement. Default is `True`.
 
-* `synonyms_percentage` (float, optional): The percentage of words in the input text that should be replaced with their synonyms. Default is 0.5.
+- `synonyms_percentage` (float, optional): The percentage of words in the input text that should be replaced with their synonyms. Default is 0.5.
 
-* `use_back_translation` (bool, optional): Whether or not to use back translation. Default is `False`.
+- `use_back_translation` (bool, optional): Whether or not to use back translation. Default is `False`.
 
-* `languages` (List[str], optional): A list of two-letter language codes representing the languages to translate the text to and back from. Default is `['en', 'es']`.
+- `languages` (List[str], optional): A list of two-letter language codes representing the languages to translate the text to and back from. Default is `['en', 'es']`.
 
-* `translator` (str, optional): The name of the translator to use for back translation. Currently, the only supported value is `'google'`. Default is `'google'`.
+- `translator` (str, optional): The name of the translator to use for back translation. Currently, the only supported value is `'google'`. Default is `'google'`.
 
-* `use_character_swap` (bool, optional): Whether or not to use character swap. Default is `False`.
+- `use_character_swap` (bool, optional): Whether or not to use character swap. Default is `False`.
 
-* `char_swap_prob` (float, optional): The probability of swapping a character in a word. Default is 0.25.
+- `char_swap_prob` (float, optional): The probability of swapping a character in a word. Default is 0.25.
 
-* `use_random_swap` (bool, optional): Whether or not to use random word swap. Default is `False`.
+- `use_random_swap` (bool, optional): Whether or not to use random word swap. Default is `False`.
 
-* `random_swap_percentage` (float, optional): The percentage of words in the input text to swap with other words. If `num_words` is specified, this parameter is ignored. Default is `None`.
+- `random_swap_percentage` (float, optional): The percentage of words in the input text to swap with other words. If `num_words` is specified, this parameter is ignored. Default is `None`.
 
-* `num_words` (int, optional): The number of words to swap with other words in the input text. If `num_words` is specified, `random_swap_percentage` is ignored. Default is `None`.
+- `num_words` (int, optional): The number of words to swap with other words in the input text. If `num_words` is specified, `random_swap_percentage` is ignored. Default is `None`.
 
-* `random_swap_prob` (float, optional): The probability of swapping a word in the text. Default is 0.15.
+- `random_swap_prob` (float, optional): The probability of swapping a word in the text. Default is 0.15.
 
-* `use_add_noise` (bool, optional): Whether or not to add noise to the text. Default is `True`.
+- `use_add_noise` (bool, optional): Whether or not to add noise to the text. Default is `True`.
 
-* `word_noise_prob` (float, optional): The probability of adding noise to a word in the text. Default is 0.2.
+- `word_noise_prob` (float, optional): The probability of adding noise to a word in the text. Default is 0.2.
 
-* `char_noise_prob` (float, optional): The probability of adding or removing a character in a word in the text. Default is 0.2.
+- `char_noise_prob` (float, optional): The probability of adding or removing a character in a word in the text. Default is 0.2.
 
-### Example Usage:
+### Example Usage
 
 Here's an example of how to use the `text_augmentation` function:
 
