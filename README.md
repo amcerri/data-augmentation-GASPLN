@@ -37,6 +37,8 @@ python -m spacy download pt_core_news_sm
 
 This function is used to replace a percentage of words in a given text string with their synonyms. It takes two arguments: `text` and `percentage`.
 
+***For information about the synonym dataset used in the function, navigate to [Synonyms Dataset](#synonyms-dataset).***
+
 ### Arguments
 
 - `text` (str): The input text to be processed. This can be any string, but should ideally be a full sentence or paragraph for best results.
