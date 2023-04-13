@@ -36,7 +36,7 @@ python -m spacy download pt_core_news_sm
 
 Esta função é usada para substituir uma porcentagem de palavras em uma determinada string de texto pelos seus sinônimos. Ela recebe dois parâmetros: text e percentage.
 
-***Para informações a respeito do dicionário de sinônimos utilizado na função, navegue até [Dicionário de Sinônimos](#dicionário-de-sinônimos).***
+***Para informações a respeito do dicionário de sinônimos utilizado na função, navegue até [Dataset de Sinônimos](#dataset-de-sinônimos).***
 
 ### Parâmetros
 
