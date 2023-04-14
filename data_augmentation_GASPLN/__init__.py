@@ -211,7 +211,7 @@ def text_augmentation(text: str,
     
     # Use synonyms to replace some words in the text
     if use_synonyms:
-        text = synonyms_replacement(text, synonyms_df=synonyms_df, percentage=synonyms_percentage)
+        text = synonyms_replacement(text, percentage=synonyms_percentage)
         
     # Use back translation to translate the text to a different language and back to the original
     if use_back_translation:
